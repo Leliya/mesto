@@ -1,0 +1,39 @@
+.page{
+  background-color: black;
+  width: 100%;
+  display: grid;
+  grid-template-columns: calc(200vw/1280*100) calc(880vw/1280*100) calc(200vw/1280*100);
+  grid-template-rows: repeat(4,min-content);
+  grid-template-areas: 
+  ". header ."
+  ". profile ."
+  ". photos ."
+  ". footer .";
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+}
+
+@media screen and (max-width:425px){
+  .page{
+    grid-template-columns: calc(20.45vw/425*100) 1fr calc(20.45vw/425*100);
+  }
+}
+
+@media screen and (max-width:320px){
+  .page{
+    grid-template-columns: 100vw;
+    grid-template-areas: 
+    "header"
+    "profile"
+    "photos"
+    "footer";
+  }
+}
