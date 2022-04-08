@@ -1,0 +1,24 @@
+.profile {
+  padding: calc(40vw / 1280 * 100) 0 calc(50vw / 1280 * 100);
+  width: 100%;
+  display: grid;
+  grid-template-columns: min-content 30px min-content 18px min-content 1fr min-content;
+  grid-template-rows: 50% min-content;
+  align-items: center;
+}
+
+@media screen and (max-width:1024px){
+  .profile {
+    padding: calc(40vw / 1024 * 100) 0 calc(50vw / 1024 * 100);
+    grid-template-columns: min-content calc(30vw / 1024 * 100) min-content calc(18vw / 1024 * 100) min-content 1fr min-content;
+  }
+}
+
+@media screen and (max-width:320px){
+  .profile {
+    padding: calc(42vw / 320 * 100) 0 calc(36vw / 320 * 100);
+    grid-template-rows: min-content calc(26vw / 320 * 100) min-content min-content calc(36vw / 320 * 100) min-content;
+    grid-template-columns: calc(282vw / 320 * 100);
+    justify-items: center;
+  }
+}

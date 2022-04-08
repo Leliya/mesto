@@ -1,0 +1,39 @@
+.profile__name {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 42px;
+  line-height: 1.14;
+  margin: 0;
+  color: white;
+  grid-column: 3;
+  grid-row: 1;
+  min-width: 294px;
+  align-self: baseline;
+  padding-top: 22px;
+}
+
+@media screen and (max-width: 1024px) {
+  .profile__name {
+    font-size: calc(42vw / 1024 * 100);
+    min-width: calc(294vw / 1024 * 100);
+    padding-top: calc(22vw / 1024 * 100);
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .profile__name {
+    font-size: 17px;
+    min-width: 120px;
+    padding-top: calc(6vw/ 425 * 100);
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .profile__name {
+    grid-column: 1;
+    grid-row: 3;
+    font-size: calc(17vw / 320 * 100);
+    line-height: 1.22;
+    
+  }
+}

@@ -1,0 +1,40 @@
+.profile__edit-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+  grid-column: 5;
+  grid-row: 1;
+  width: 24px;
+  height: 24px;
+  align-self: baseline;
+  background-image: url("../../../images/profile-edit-button.svg");
+
+  background-size: contain;
+}
+
+@media screen and (max-width: 1024px) {
+  .profile__edit-button {
+    width: calc(24vw / 1024 * 100);
+    height: calc(24vw / 1024 * 100);
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .profile__edit-button {
+    width: 10px;
+    height: 10px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .profile__edit-button {
+    width: calc(18vw / 320 * 100);
+    height: calc(18vw / 320 * 100);
+    grid-column: 1;
+    grid-row: 3;
+    justify-self: end;
+    margin-right: 19px;
+  }
+}

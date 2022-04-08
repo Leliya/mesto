@@ -6,8 +6,7 @@
   grid-template-rows: repeat(4,min-content);
   grid-template-areas: 
   ". header ."
-  ". profile ."
-  ". photos ."
+  ". main ."
   ". footer .";
   align-items: center;
   margin: 0;
@@ -21,6 +20,12 @@
   -moz-text-size-adjust: 100%;
 }
 
+@media screen and (min-width:1441px){
+  .page{
+    grid-template-columns: 1fr 990px 1fr;
+  }
+}
+
 @media screen and (max-width:425px){
   .page{
     grid-template-columns: calc(20.45vw/425*100) 1fr calc(20.45vw/425*100);
@@ -29,11 +34,10 @@
 
 @media screen and (max-width:320px){
   .page{
-    grid-template-columns: 100vw;
+    grid-template-columns: calc(19vw/320*100) 1fr calc(19vw/320*100);
     grid-template-areas: 
-    "header"
-    "profile"
-    "photos"
-    "footer";
+    "header header header"
+    ". main . "
+    ". footer .";
   }
 }
