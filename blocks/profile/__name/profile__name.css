@@ -24,7 +24,7 @@
   .profile__name {
     font-size: 17px;
     min-width: 120px;
-    padding-top: calc(6vw/ 425 * 100);
+    padding-top: calc(6vw / 425 * 100);
   }
 }
 
@@ -32,8 +32,8 @@
   .profile__name {
     grid-column: 1;
     grid-row: 3;
-    font-size: calc(17vw / 320 * 100);
+    font-size: calc(27vw / 320 * 100);
     line-height: 1.22;
-    
+    padding-top: 0;
   }
 }
