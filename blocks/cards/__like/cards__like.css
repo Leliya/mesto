@@ -1,39 +1,39 @@
-.cards__like{
+.cards__like {
   width: 22px;
   height: 19px;
   object-fit: cover;
 }
 
 @media screen and (min-width: 1441px) {
-  .cards__like{
+  .cards__like {
     width: 25px;
     height: 22px;
   }
 }
 
 @media screen and (max-width: 1441px) {
-  .cards__like{
+  .cards__like {
     width: calc(22vw / 1280 * 100);
     height: calc(19vw / 1280 * 100);
   }
 }
 
 @media screen and (max-width: 845px) {
-  .cards__like{
+  .cards__like {
     width: calc(22vw / 845 * 100);
-    height: calc(19vw / 845* 100);
+    height: calc(19vw / 845 * 100);
   }
 }
 @media screen and (max-width: 425px) {
-  .cards__like{
+  .cards__like {
     width: calc(14vw / 425 * 100);
-    height: calc(12vw / 425* 100);
+    height: calc(12vw / 425 * 100);
   }
 }
 
 @media screen and (max-width: 320px) {
-  .cards__like{
+  .cards__like {
     width: calc(22vw / 320 * 100);
-    height: calc(19vw / 320* 100);
+    height: calc(19vw / 320 * 100);
   }
 }

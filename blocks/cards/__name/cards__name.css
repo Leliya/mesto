@@ -9,32 +9,32 @@
   overflow: hidden;
 }
 
-
-@media screen and (min-width:1441px){
-  .cards__name{
+@media screen and (min-width: 1441px) {
+  .cards__name {
     font-size: 27px;
   }
 }
 
-@media screen and (max-width: 1441px){
-  .cards__name{
-    font-size: calc(24vw/1280*100);
+@media screen and (max-width: 1441px) {
+  .cards__name {
+    font-size: calc(24vw / 1280 * 100);
   }
 }
 
-@media screen and (max-width:845px){
-  .cards__name{
-    font-size:calc(24vw/845*100);
-  }
-}
-@media screen and (max-width:425px){
-  .cards__name{
-    font-size: calc(18vw/425*100);
+@media screen and (max-width: 845px) {
+  .cards__name {
+    font-size: calc(24vw / 845 * 100);
   }
 }
 
-@media screen and (max-width:320px){
-  .cards__name{
+@media screen and (max-width: 425px) {
+  .cards__name {
+    font-size: calc(18vw / 425 * 100);
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .cards__name {
     font-size: 24px;
   }
 }

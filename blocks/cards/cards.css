@@ -1,53 +1,53 @@
-.cards{
+.cards {
   width: 100%;
   display: grid;
   list-style: none;
   padding: 0;
   margin: 0;
-  grid-template-columns: repeat(3, calc(282vw/1280*100));
-  grid-template-rows: repeat(2,calc(362vw/1280*100));
-  column-gap: calc(17vw/1280*100);
-  row-gap: calc(20vw/1280*100);
-  grid-auto-rows: calc(362vw/1280*100);
+  grid-template-columns: repeat(3, calc(282vw / 1280 * 100));
+  grid-template-rows: repeat(2, calc(362vw / 1280 * 100));
+  column-gap: calc(17vw / 1280 * 100);
+  row-gap: calc(20vw / 1280 * 100);
+  grid-auto-rows: calc(362vw / 1280 * 100);
   grid-auto-flow: row;
 }
 
-@media screen and (min-width:1441px){
-  .cards{
+@media screen and (min-width: 1441px) {
+  .cards {
     grid-template-columns: repeat(3, 317px);
-  grid-template-rows: repeat(2,407px);
-  column-gap: 17px;
-  row-gap: 20px;
-  grid-auto-rows: 407px;
+    grid-template-rows: repeat(2, 407px);
+    column-gap: 17px;
+    row-gap: 20px;
+    grid-auto-rows: 407px;
   }
 }
 
-@media screen and (max-width:845px){
-  .cards{
-    grid-template-columns: repeat(2, calc(282vw/845*100));
-  grid-template-rows: repeat(3,calc(362vw/845*100));
-  column-gap: calc(17vw/845*100);
-  row-gap: calc(20vw/845*100);
-  grid-auto-rows: calc(362vw/845*100);
+@media screen and (max-width: 845px) {
+  .cards {
+    grid-template-columns: repeat(2, calc(282vw / 845 * 100));
+    grid-template-rows: repeat(3, calc(362vw / 845 * 100));
+    column-gap: calc(17vw / 845 * 100);
+    row-gap: calc(20vw / 845 * 100);
+    grid-auto-rows: calc(362vw / 845 * 100);
   }
 }
 
-@media screen and (max-width:425px){
-  .cards{
-    grid-template-columns: repeat(2, calc(187vw/425*100));
-  grid-template-rows: repeat(3,calc(240vw/425*100));
-  column-gap: calc(10vw/425*100);
-  row-gap: calc(15vw/425*100);
-  grid-auto-rows: calc(181vw/425*100);
+@media screen and (max-width: 425px) {
+  .cards {
+    grid-template-columns: repeat(2, calc(187vw / 425 * 100));
+    grid-template-rows: repeat(3, calc(240vw / 425 * 100));
+    column-gap: calc(10vw / 425 * 100);
+    row-gap: calc(15vw / 425 * 100);
+    grid-auto-rows: calc(181vw / 425 * 100);
   }
 }
 
-
-@media screen and (max-width:320px){
-  .cards{
+@media screen and (max-width: 320px) {
+  .cards {
     grid-template-columns: 282px;
-  grid-template-rows: repeat(6, 362px);
-  row-gap: 20px;
-  column-gap: 0;grid-auto-rows: 362px;
+    grid-template-rows: repeat(6, 362px);
+    row-gap: 20px;
+    column-gap: 0;
+    grid-auto-rows: 362px;
   }
 }

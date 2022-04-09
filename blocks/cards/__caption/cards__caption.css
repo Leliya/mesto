@@ -16,7 +16,7 @@
 @media screen and (max-width: 1441px) {
   .cards__caption {
     padding: 0 calc(20vw / 1280 * 100);
-    margin-top: calc(25vw /1280 * 100);
+    margin-top: calc(25vw / 1280 * 100);
   }
 }
 
