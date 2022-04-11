@@ -1,12 +1,21 @@
 .cards__like {
   width: 22px;
   height: 19px;
-  object-fit: cover;
+  background-image: url('../../../images/cards-like.svg');
+  opacity: 1;
+  transition: opacity .4s ease;
+  background-size: cover;
 }
+
+.cards__like:hover{
+opacity: 0.6;
+cursor:pointer;
+}
+
 
 @media screen and (min-width: 1441px) {
   .cards__like {
-    width: 25px;
+    width: 26px;
     height: 22px;
   }
 }
@@ -37,3 +46,4 @@
     height: calc(19vw / 320 * 100);
   }
 }
+

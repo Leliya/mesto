@@ -10,7 +10,15 @@
   height: 50px;
   background-image: url("../../../images/profile-add-button.svg");
   background-size: contain;
+  opacity: 1;
+    transition: opacity .4s ease;
 }
+
+.profile__add-button:hover{
+  opacity: 0.6;
+  cursor:pointer;
+}
+
 
 @media screen and (max-width: 1024px) {
   .profile__add-button {
@@ -32,8 +40,9 @@
   .profile__add-button {
     grid-column: 1;
     grid-row: 6;
-    background-image: url("../../../images/add-button-mobile.svg");
+    background-image: url("../../../images/profile-add-button-mobile.svg");
     width: 100%;
     height: calc(50vw / 320 * 100);
   }
+  
 }

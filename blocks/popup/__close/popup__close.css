@@ -1,0 +1,35 @@
+.popup__close {
+  width: 32px;
+  height: 32px;
+  position: absolute;
+  right: -40px;
+  top: -40px;
+  background-image: url("../../../images/popup-close.svg");
+  transition: background-image .3s ease;
+}
+
+.popup__close:hover {
+  background-image: url('../../../images/popup-close-hover.svg');
+}
+
+@media screen and (max-width: 845px) {
+  .popup__close {
+    width: calc(32vw / 845 * 100);
+    height: calc(32vw / 845 * 100);
+    background-size: contain;
+    right: calc((-40vw) / 845 * 100);
+  top: calc((-40vw) / 845 * 100);
+
+  }
+}
+
+@media screen and (max-width: 845px) {
+  .popup__close {
+    width: 20px;
+    height: 20px;
+    background-size: contain;
+    right: 0;
+  top: -36px;
+
+  }
+}

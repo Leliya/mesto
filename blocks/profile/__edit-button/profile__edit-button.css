@@ -10,8 +10,14 @@
   height: 24px;
   align-self: baseline;
   background-image: url("../../../images/profile-edit-button.svg");
-
   background-size: contain;
+  opacity: 1;
+    transition: opacity .4s ease;
+}
+
+.profile__edit-button:hover{
+  opacity: 0.6;
+  cursor:pointer;
 }
 
 @media screen and (max-width: 1024px) {
