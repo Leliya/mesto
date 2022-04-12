@@ -5,7 +5,7 @@
   line-height: 1.14;
   margin: 0;
   color: white;
-  max-width: calc(294vw/1280*100);grid-column: 3/4;
+  max-width: calc(366vw/1280*100);grid-column: 3/4;
   grid-row: 1;
   
   align-self: baseline;
@@ -23,7 +23,7 @@ white-space: nowrap;text-overflow: ellipsis;overflow: hidden;}
 @media screen and (max-width: 425px) {
   .profile__name {
     font-size: 17px;
-    /* min-width: 50px; */
+    max-width: 120px;
     padding-top: calc(6vw / 425 * 100);
   }
 }

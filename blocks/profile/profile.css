@@ -2,7 +2,7 @@
   padding: calc(40vw / 1280 * 100) 0 calc(50vw / 1280 * 100);
   width: 100%;
   display: grid;
-  grid-template-columns: min-content 30px minmax(min-content, 100px) 18px min-content 1fr min-content;
+  grid-template-columns: min-content 30px minmax(min-content, 110px) 18px min-content 1fr min-content;
   grid-template-rows: 50% min-content;
   align-items: center;
 }

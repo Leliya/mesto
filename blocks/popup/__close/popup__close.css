@@ -2,7 +2,7 @@
   width: 32px;
   height: 32px;
   position: absolute;
-  right: -40px;
+  background: none;border: none;right: -40px;
   top: -40px;
   background-image: url("../../../images/popup-close.svg");
   opacity: 1;
