@@ -5,23 +5,23 @@
   line-height: 1.22;
   margin: 0;
   color: white;
-  grid-column: 3/6;
+  grid-column: 3/4;
   grid-row: 2;
-  min-width: 336px;
+  max-width: calc(294vw/1280*100);
   align-self: center;
-}
+white-space: nowrap;text-overflow: ellipsis;overflow: hidden;}
 
 @media screen and (max-width: 1024px) {
   .profile__activity {
     font-size: calc(18vw / 1024 * 100);
-    min-width: calc(336vw / 1024 * 100);
+    max-width: calc(300vw / 1024 * 100);
   }
 }
 
 @media screen and (max-width: 425px) {
   .profile__activity {
     font-size: 8px;
-    min-width: 140px;
+    /* min-width: 140px; */
   }
 }
 
@@ -32,5 +32,5 @@
     font-size: calc(14vw / 320 * 100);
     line-height: 1.21;
     padding-top: calc(8vw / 320 * 100);
-  }
+  max-width: 230px;}
 }

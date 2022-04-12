@@ -1,42 +1,41 @@
 .cards__like {
-  width: 22px;
-  height: 19px;
-  background-image: url('../../../images/cards-like.svg');
+  min-width: 22px;
+  min-height: 19px;
+  background-image: url("../../../images/cards-like.svg");
   opacity: 1;
-  transition: opacity .4s ease;
-  background-size: cover;
-}
+  transition: opacity 0.4s ease;
+  background-size: contain;
+background-repeat: no-repeat;}
 
-.cards__like:hover{
-opacity: 0.6;
-cursor:pointer;
+.cards__like:hover {
+  opacity: 0.6;
+  cursor: pointer;
 }
-
 
 @media screen and (min-width: 1441px) {
   .cards__like {
-    width: 26px;
-    height: 22px;
+    min-width: 26px;
+    height: 26px;
   }
 }
 
 @media screen and (max-width: 1441px) {
   .cards__like {
-    width: calc(22vw / 1280 * 100);
-    height: calc(19vw / 1280 * 100);
+    min-width: calc(22vw / 1280 * 100);
+    min-height: calc(19vw / 1280 * 100);
   }
 }
 
 @media screen and (max-width: 845px) {
   .cards__like {
-    width: calc(22vw / 845 * 100);
-    height: calc(19vw / 845 * 100);
+    min-width: calc(22vw / 845 * 100);
+    min-height: calc(19vw / 845 * 100);
   }
 }
 @media screen and (max-width: 425px) {
   .cards__like {
-    width: calc(14vw / 425 * 100);
-    height: calc(12vw / 425 * 100);
+    min-width: calc(22vw / 425 * 100);
+    min-height: calc(19vw / 425 * 100);
   }
 }
 
@@ -46,4 +45,3 @@ cursor:pointer;
     height: calc(19vw / 320 * 100);
   }
 }
-

@@ -20,7 +20,8 @@
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
-position: relative;}
+  position: relative;
+}
 
 @media screen and (min-width: 1441px) {
   .page {

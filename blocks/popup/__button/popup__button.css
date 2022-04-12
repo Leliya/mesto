@@ -36,11 +36,3 @@
     font-size: 14px;
   }
 }
-
-@media screen and (max-width: 320px) {
-  .popup__button {
-    height: 46px;
-    font-size: 14px;
-    margin: 45px 0 0;
-  }
-}

@@ -5,17 +5,17 @@
   line-height: 1.14;
   margin: 0;
   color: white;
-  grid-column: 3;
+  max-width: calc(294vw/1280*100);grid-column: 3/4;
   grid-row: 1;
-  min-width: 294px;
+  
   align-self: baseline;
   padding-top: 22px;
-}
+white-space: nowrap;text-overflow: ellipsis;overflow: hidden;}
 
 @media screen and (max-width: 1024px) {
   .profile__name {
-    font-size: calc(42vw / 1024 * 100);
-    min-width: calc(294vw / 1024 * 100);
+    font-size: calc(38vw / 1024 * 100);
+    max-width: calc(300vw / 1024 * 100);
     padding-top: calc(22vw / 1024 * 100);
   }
 }
@@ -23,7 +23,7 @@
 @media screen and (max-width: 425px) {
   .profile__name {
     font-size: 17px;
-    min-width: 120px;
+    /* min-width: 50px; */
     padding-top: calc(6vw / 425 * 100);
   }
 }
@@ -35,5 +35,5 @@
     font-size: calc(27vw / 320 * 100);
     line-height: 1.22;
     padding-top: 0;
-  }
+  max-width: 210px;}
 }

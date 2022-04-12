@@ -1,79 +1,46 @@
-.popup__field-activity{
+.popup__field-activity {
   width: 100%;
-border: none;
-border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-padding: 0;
-color:#000000;
-min-height: 27px;
-padding-bottom: 3px;
-margin: 16px 0 0;
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 0;
+  color: #000000;
+  min-height: 27px;
+  padding-bottom: 3px;
+  margin: 16px 0 0;
 }
 
-.popup__field-activity::-webkit-input-placeholder{
+.popup__field-activity::-webkit-input-placeholder {
   font-weight: 400;
-font-size: 14px;
-line-height:1.2;
-color: #000000;
+  font-size: 14px;
+  line-height: 1.2;
+  color: #000000;
 }
-.popup__field-activity::-moz-placeholder{
+.popup__field-activity::-moz-placeholder {
   font-weight: 400;
-font-size: 14px;
-line-height:1.2;
-color: #000000;
+  font-size: 14px;
+  line-height: 1.2;
+  color: #000000;
 }
-.popup__field-activity:-ms-input-placeholder{
+.popup__field-activity:-ms-input-placeholder {
   font-weight: 400;
-font-size: 14px;
-line-height:1.2;
-color: #000000;
-vertical-align:text-top;
+  font-size: 14px;
+  line-height: 1.2;
+  color: #000000;
 }
-.popup__field-activity::-ms-input-placeholder{
+.popup__field-activity::-ms-input-placeholder {
   font-weight: 400;
-font-size: 14px;
-line-height:1.2;
-color: #000000;
-vertical-align:text-top;
+  font-size: 14px;
+  line-height: 1.2;
+  color: #000000;
 }
-.popup__field-activity::placeholder{
+.popup__field-activity::placeholder {
   font-weight: 400;
-font-size: 14px;
-line-height:1.2;
-color: #000000;
-vertical-align:text-top;
+  font-size: 14px;
+  line-height: 1.2;
+  color: #000000;
 }
-
-/*@media screen and (max-width: 845px) {
-  .popup__field-activity {
-     min-height: calc(27vw / 845 * 100); 
-    margin: calc(16vw / 845 * 100) 0 0;
-  }
-
-  .popup__field-activity::-webkit-input-placeholder {
-    font-size: calc(13vw / 750 * 100);
-  }
-  .popup__field-activity::-moz-placeholder {
-    font-size: calc(13vw / 750 * 100);
-  }
-  .popup__field-activity:-ms-input-placeholder:-ms-input-placeholder {
-    font-size: calc(13vw / 750 * 100);
-  }
-  .popup__field-activity::-ms-input-placeholder {
-    font-size: calc(13vw / 750 * 100);
-  }
-  .popup__field-activity::placeholder {
-    font-size: calc(13vw / 750 * 100);
-  }
-}*/
 
 @media screen and (max-width: 555px) {
-  .popup__field-activity {
-    margin: 25px 0 0;
-  }
-}
-
-
-@media screen and (max-width: 320px) {
   .popup__field-activity {
     margin: 25px 0 0;
   }
