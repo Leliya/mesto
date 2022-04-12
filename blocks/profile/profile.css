@@ -10,29 +10,36 @@
 @media screen and (max-width: 1024px) {
   .profile {
     padding: calc(40vw / 1024 * 100) 0 calc(50vw / 1024 * 100);
-    grid-template-columns: min-content calc(30vw / 1024 * 100) minmax(min-content, 100px) calc(        18vw / 1024 * 100      ) min-content 1fr min-content;
+    grid-template-columns:
+      min-content calc(30vw / 1024 * 100) minmax(min-content, 100px)
+      calc(18vw / 1024 * 100) min-content 1fr min-content;
   }
 }
 
 @media screen and (max-width: 845px) {
   .profile {
-    grid-template-columns: min-content calc(30vw / 1024 * 100) minmax(min-content, 100px) calc(        18vw / 1024 * 100      ) min-content 1fr min-content;
+    grid-template-columns:
+      min-content calc(30vw / 1024 * 100) minmax(min-content, 100px)
+      calc(18vw / 1024 * 100) min-content 1fr min-content;
   }
 }
 
 @media screen and (max-width: 425px) {
   .profile {
-    grid-template-columns: min-content calc(30vw / 1024 * 100) minmax(min-content, 50px) calc(        18vw / 1024 * 100      ) min-content 1fr min-content;
+    grid-template-columns:
+      min-content calc(30vw / 1024 * 100) minmax(min-content, 50px)
+      calc(18vw / 1024 * 100) min-content 1fr min-content;
   }
 }
-
 
 @media screen and (max-width: 320px) {
   .profile {
     padding: calc(42vw / 320 * 100) 0 calc(36vw / 320 * 100);
-    grid-template-rows: min-content calc(26vw / 320 * 100) min-content min-content calc(
+    grid-template-rows:
+      min-content calc(26vw / 320 * 100) min-content min-content calc(
         32vw / 320 * 100
-      ) min-content;
+      )
+      min-content;
     grid-template-columns: calc(282vw / 320 * 100);
     justify-items: center;
   }

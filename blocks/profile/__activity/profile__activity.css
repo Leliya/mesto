@@ -7,9 +7,12 @@
   color: white;
   grid-column: 3/4;
   grid-row: 2;
-  max-width: calc(294vw/1280*100);
+  max-width: calc(294vw / 1280 * 100);
   align-self: center;
-white-space: nowrap;text-overflow: ellipsis;overflow: hidden;}
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
 
 @media screen and (max-width: 1024px) {
   .profile__activity {
@@ -32,5 +35,6 @@ white-space: nowrap;text-overflow: ellipsis;overflow: hidden;}
     font-size: calc(14vw / 320 * 100);
     line-height: 1.21;
     padding-top: calc(8vw / 320 * 100);
-  max-width: 230px;}
+    max-width: 230px;
+  }
 }
