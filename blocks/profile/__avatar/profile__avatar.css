@@ -17,6 +17,6 @@
   .profile__avatar {
     grid-row: 1;
     width: 120px;
-    height: 120px;
+  height: 120px;
   }
 }
