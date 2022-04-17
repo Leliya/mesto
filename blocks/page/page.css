@@ -29,17 +29,15 @@
   }
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 1024px) {
   .page {
-    grid-template-columns: calc(20.45vw / 425 * 100) 1fr calc(
-        20.45vw / 425 * 100
-      );
+    grid-template-columns: 1fr 704px 1fr;
   }
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 720px) {
   .page {
-    grid-template-columns: calc(19vw / 320 * 100) 1fr calc(19vw / 320 * 100);
+    grid-template-columns: 19px 1fr 19px;
     grid-template-areas:
       "header header header"
       ". main ."

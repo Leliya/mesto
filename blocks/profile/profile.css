@@ -1,46 +1,26 @@
 .profile {
-  padding: calc(40vw / 1280 * 100) 0 calc(50vw / 1280 * 100);
+  padding: 40px 0 50px;
   width: 100%;
   display: grid;
   grid-template-columns: min-content 30px minmax(min-content, 110px) 18px min-content 1fr min-content;
   grid-template-rows: 50% min-content;
   align-items: center;
+  justify-content: center;
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 720px) {
   .profile {
-    padding: calc(40vw / 1024 * 100) 0 calc(50vw / 1024 * 100);
     grid-template-columns:
-      min-content calc(30vw / 1024 * 100) minmax(min-content, 100px)
-      calc(18vw / 1024 * 100) min-content 1fr min-content;
+      min-content calc(30vw / 720 * 100) minmax(min-content, 100px)
+      calc(18vw / 720 * 100) min-content 1fr min-content;
   }
 }
 
-@media screen and (max-width: 845px) {
+@media screen and (max-width: 600px) {
   .profile {
-    grid-template-columns:
-      min-content calc(30vw / 1024 * 100) minmax(min-content, 100px)
-      calc(18vw / 1024 * 100) min-content 1fr min-content;
-  }
-}
-
-@media screen and (max-width: 425px) {
-  .profile {
-    grid-template-columns:
-      min-content calc(30vw / 1024 * 100) minmax(min-content, 50px)
-      calc(18vw / 1024 * 100) min-content 1fr min-content;
-  }
-}
-
-@media screen and (max-width: 320px) {
-  .profile {
-    padding: calc(42vw / 320 * 100) 0 calc(36vw / 320 * 100);
-    grid-template-rows:
-      min-content calc(26vw / 320 * 100) min-content min-content calc(
-        32vw / 320 * 100
-      )
-      min-content;
-    grid-template-columns: calc(282vw / 320 * 100);
+    padding: 42px 0 36px;
+    grid-template-rows: min-content 26px min-content min-content 32px min-content;
+    grid-template-columns: 282px;
     justify-items: center;
   }
 }
