@@ -7,16 +7,9 @@
   padding: 66px 0 60px;
 }
 
-@media screen and (max-width: 1280px) {
-  .footer__author {
-    font-size: calc(18vw / 1280 * 100);
-    padding: calc(66vw / 1280 * 100) 0 calc(60vw / 1280 * 100);
-  }
-}
-
 @media screen and (max-width: 845px) {
   .footer__author {
-    font-size: calc(18vw / 845 * 100);
+    font-size: 16px;
     padding: calc(66vw / 845 * 100) 0 calc(45vw / 845 * 100);
   }
 }
@@ -27,16 +20,9 @@
     padding: calc(50vw / 600 * 100) 0 calc(40vw / 600 * 100);
   }
 }
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 500px) {
   .footer__author {
-    font-size: calc(16vw / 425 * 100);
-    padding: calc(45vw / 425 * 100) 0 calc(40vw / 425 * 100);
-  }
-}
-
-@media screen and (max-width: 320px) {
-  .footer__author {
-    font-size: calc(14vw / 320 * 100);
-    padding: calc(48vw / 320 * 100) 0 calc(36vw / 320 * 100);
+    font-size: 14px;
+    padding: 48px 0 36px;
   }
 }

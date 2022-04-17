@@ -20,24 +20,10 @@
   cursor: pointer;
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 600px) {
   .profile__edit-button {
-    width: calc(24vw / 1024 * 100);
-    height: calc(24vw / 1024 * 100);
-  }
-}
-
-@media screen and (max-width: 425px) {
-  .profile__edit-button {
-    width: 10px;
-    height: 10px;
-  }
-}
-
-@media screen and (max-width: 320px) {
-  .profile__edit-button {
-    width: calc(18vw / 320 * 100);
-    height: calc(18vw / 320 * 100);
+    width: 18px;
+    height: 18px;
     grid-column: 1;
     grid-row: 3;
     justify-self: end;

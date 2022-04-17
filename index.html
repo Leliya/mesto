@@ -8,77 +8,115 @@
   </head>
   <body class="page">
     <header class="header">
-      <img class="header__logo" alt="Логотип" src="./images/header-logo.svg"/>
+      <img class="header__logo" alt="Логотип" src="./images/header-logo.svg" />
     </header>
     <main class="main">
       <section class="profile">
-        <img src="./images/cards-altay.jpg" alt="Аватар профиля" class="profile__avatar"/>
-        <p class="profile__name">Жак-Ив Кусто</p>
+        <img
+          src="./images/profile-Avatar.jpg"
+          alt="Аватар профиля"
+          class="profile__avatar"
+        />
+        <h1 class="profile__name">Жак-Ив Кусто</h1>
         <p class="profile__activity">Исследователь океана</p>
-        <button class="profile__edit-button"></button>
-        <button class="profile__add-button"></button>
+        <button class="profile__edit-button" type="button"></button>
+        <button class="profile__add-button" type="button"></button>
       </section>
       <section class="photos">
         <ul class="cards">
           <li class="cards__item">
-            <img src="./images/cards-altay.jpg" alt="Алтай" class="cards__image"/>
+            <img
+              src="./images/cards-altay.jpg"
+              alt="Алтай"
+              class="cards__image"
+            />
             <div class="cards__caption">
               <h2 class="cards__name">Алтай</h2>
-              <div class="cards__like"></div>
+              <button type="button" class="cards__like"></button>
             </div>
           </li>
           <li class="cards__item">
-            <img  src="./images/cards-kareliya.jpg" alt="Карелия" class="cards__image"/>
+            <img
+              src="./images/cards-kareliya.jpg"
+              alt="Карелия"
+              class="cards__image"
+            />
             <div class="cards__caption">
               <h2 class="cards__name">Карелия</h2>
-              <div class="cards__like cards__like_active"></div>
+              <button type="button" class="cards__like"></button>
             </div>
           </li>
           <li class="cards__item">
-            <img src="./images/cards-baikal.jpg" alt="Байкал" class="cards__image"/>
+            <img
+              src="./images/cards-baikal.jpg"
+              alt="Байкал"
+              class="cards__image"
+            />
             <div class="cards__caption">
               <h2 class="cards__name">Байкал</h2>
-              <div class="cards__like"></div>
+              <button type="button" class="cards__like"></button>
             </div>
           </li>
           <li class="cards__item">
-            <img src="./images/cards-samara.jpg"  alt="Самара" class="cards__image"/>
+            <img
+              src="./images/cards-samara.jpg"
+              alt="Самара"
+              class="cards__image"
+            />
             <div class="cards__caption">
               <h2 class="cards__name">Самара</h2>
-              <div class="cards__like"></div>
+              <button type="button" class="cards__like"></button>
             </div>
           </li>
           <li class="cards__item">
-            <img src="./images/cards-kaliningrad.jpg" alt="Калининград" class="cards__image"/>
+            <img
+              src="./images/cards-kaliningrad.jpg"
+              alt="Калининград"
+              class="cards__image"
+            />
             <div class="cards__caption">
               <h2 class="cards__name">Калининград</h2>
-              <div class="cards__like"></div>
+              <button type="button" class="cards__like"></button>
             </div>
           </li>
           <li class="cards__item">
-            <img src="./images/cards-stpetersburg.jpg" alt="Санкт-Петербург" class="cards__image"/>
+            <img
+              src="./images/cards-stpetersburg.jpg"
+              alt="Санкт-Петербург"
+              class="cards__image"
+            />
             <div class="cards__caption">
               <h2 class="cards__name">Санкт-Петербург</h2>
-              <div class="cards__like"></div>
+              <button type="button" class="cards__like"></button>
             </div>
           </li>
         </ul>
       </section>
     </main>
-      <footer class="footer">
-        <p class="footer__author">&COPY; 2022 Mesto Russia</p>
-      </footer>
-      <section class="popup">
-        <div class="popup__container">
-          <button class="popup__close" type="button"></button>
-          <h2 class="popup__title">Редактировать профиль</h2>
-          <form action="index.html" class="popup__form">
-            <input type="text" class="popup__field-name"  name="name"  placeholder="Жак-Ив Кусто">
-            <input type="text" class="popup__field-activity" name="activity"  placeholder="Исследователь океана">
-            <button class="popup__button" type="submit">Сохранить</button>
+    <footer class="footer">
+      <p class="footer__author">&COPY; 2022 Mesto Russia</p>
+    </footer>
+    <div class="popup">
+      <div class="popup__container">
+        <button class="popup__close" type="button"></button>
+        <h2 class="popup__title">Редактировать профиль</h2>
+        <form name="profile" class="popup__form">
+          <input
+            type="text"
+            class="popup__input popup__input_type_name"
+            name="name"
+            placeholder="Жак-Ив Кусто"
+          />
+          <input
+            type="text"
+            class="popup__input popup__input_type_activity"
+            name="activity"
+            placeholder="Исследователь океана"
+          />
+          <button class="popup__button" type="submit">Сохранить</button>
         </form>
-        </div>
-      </section>
-      <script src="./pages/index.js"></script>
+      </div>
+    </div>
+    <script src="./pages/index.js"></script>
   </body>
 </html>

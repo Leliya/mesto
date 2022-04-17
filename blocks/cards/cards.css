@@ -10,6 +10,7 @@
   row-gap: calc(20vw / 1280 * 100);
   grid-auto-rows: calc(362vw / 1280 * 100);
   grid-auto-flow: row;
+  justify-content: center;
 }
 
 @media screen and (min-width: 1441px) {
@@ -22,27 +23,27 @@
   }
 }
 
-@media screen and (max-width: 845px) {
+@media screen and (max-width: 1024px) {
   .cards {
-    grid-template-columns: repeat(2, calc(282vw / 845 * 100));
-    grid-template-rows: repeat(3, calc(362vw / 845 * 100));
-    column-gap: calc(17vw / 845 * 100);
-    row-gap: calc(20vw / 845 * 100);
-    grid-auto-rows: calc(362vw / 845 * 100);
+    grid-template-columns: repeat(3, 223px);
+    grid-template-rows: repeat(2, 288px);
+    column-gap: 17px;
+    row-gap: 20px;
+    grid-auto-rows: 290px;
   }
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 720px) {
   .cards {
-    grid-template-columns: repeat(2, calc(187vw / 425 * 100));
-    grid-template-rows: repeat(3, calc(240vw / 425 * 100));
-    column-gap: calc(10vw / 425 * 100);
-    row-gap: calc(15vw / 425 * 100);
-    grid-auto-rows: calc(181vw / 425 * 100);
+    grid-template-columns: repeat(2, calc(282vw / 720 * 100));
+    grid-template-rows: repeat(3, calc(362vw / 720 * 100));
+    column-gap: calc(17vw / 720 * 100);
+    row-gap: calc(20vw / 720 * 100);
+    grid-auto-rows: calc(362vw / 720 * 100);
   }
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 500px) {
   .cards {
     grid-template-columns: 282px;
     grid-template-rows: repeat(6, 362px);

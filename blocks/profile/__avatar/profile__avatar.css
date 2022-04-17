@@ -6,17 +6,17 @@
   height: 120px;
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 720px) {
   .profile__avatar {
-    width: calc(120vw / 1024 * 100);
-    height: calc(120vw / 1024 * 100);
+    width: calc(120vw / 720 * 100);
+    height: calc(120vw / 720 * 100);
   }
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 600px) {
   .profile__avatar {
     grid-row: 1;
     width: 120px;
-  height: 120px;
+    height: 120px;
   }
 }

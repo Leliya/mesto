@@ -20,20 +20,21 @@
   }
 }
 
-@media screen and (max-width: 845px) {
+@media screen and (max-width: 1024px) {
   .cards__caption {
-    padding: 0 calc(20vw / 845 * 100);
-    margin-top: calc(22vw / 845 * 100);
-  }
-}
-@media screen and (max-width: 425px) {
-  .cards__caption {
-    padding: 0 14px;
-    margin-top: calc(13vw / 425 * 100);
+    padding: 0 16px;
+    margin-top: 20px;
   }
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 600px) {
+  .cards__caption {
+    padding: 0 14px;
+    margin-top: calc(20vw / 600 * 100);
+  }
+}
+
+@media screen and (max-width: 500px) {
   .cards__caption {
     padding: 0 20px;
     margin-top: 22px;
