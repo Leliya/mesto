@@ -20,7 +20,6 @@
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
-  position: relative;
 }
 
 @media screen and (min-width: 1441px) {
@@ -35,7 +34,7 @@
   }
 }
 
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 750px) {
   .page {
     grid-template-columns: 19px 1fr 19px;
     grid-template-areas:

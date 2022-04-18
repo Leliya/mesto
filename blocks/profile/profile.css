@@ -4,7 +4,6 @@
   display: grid;
   grid-template-columns: min-content 30px minmax(min-content, 110px) 18px min-content 1fr min-content;
   grid-template-rows: 50% min-content;
-  /* align-items: center; */
   justify-content: center;
 }
 

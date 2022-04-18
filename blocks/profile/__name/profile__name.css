@@ -5,11 +5,11 @@
   line-height: 1.14;
   margin: 0;
   color: white;
-  max-width: 360px;
+  max-width: 350px;
   grid-column: 3/4;
   grid-row: 1;
   align-self: baseline;
-  padding-top: 22px;
+  padding-top: 24px;
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;

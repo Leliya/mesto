@@ -8,10 +8,8 @@
   grid-row: 1;
   width: 24px;
   height: 24px;
-  /* align-self: baseline; */
   background-image: url("../../../images/profile-edit-button.svg");
   background-size: contain;
-  opacity: 1;
   transition: opacity 0.4s ease;
 }
 

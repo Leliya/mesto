@@ -27,19 +27,19 @@
   }
 }
 
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 900px) {
   .cards__name {
-    font-size: calc(24vw / 720 * 100);
+    font-size: calc(24vw / 900 * 100);
   }
 }
 
-@media screen and (max-width: 600px) {
+/*@media screen and (max-width: 600px) {
   .cards__name {
     font-size: calc(20vw / 600 * 100);
   }
-}
+}*/
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 600px) {
   .cards__name {
     font-size: 24px;
   }

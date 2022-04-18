@@ -1,6 +1,5 @@
 .header__logo {
   width: 142px;
-  opacity: 1;
   transition: opacity 0.3s ease;
 }
 
@@ -9,7 +8,7 @@
   cursor: pointer;
 }
 
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 750px) {
   .header__logo {
     padding-left: 27px;
     width: 104px;
