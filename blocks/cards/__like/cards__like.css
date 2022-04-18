@@ -44,13 +44,6 @@
   }
 }
 
-/*@media screen and (max-width: 600px) {
-  .cards__like {
-    min-width: calc(22vw / 600 * 100);
-    min-height: calc(19vw / 600 * 100);
-  }
-}*/
-
 @media screen and (max-width: 600px) {
   .cards__like {
     min-width: 22px;

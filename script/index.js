@@ -11,7 +11,7 @@ const activityProfile = document.querySelector('.profile__activity');
 function openPopup() {
   popup.classList.add('popup_opened');
   nameInput.value = nameProfile.textContent;
-  activityInput.textContent = activityProfile.textContent;
+  activityInput.value = activityProfile.textContent;
 }
 
 function closePopup() {
