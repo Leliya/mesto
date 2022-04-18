@@ -24,14 +24,14 @@
   }
 }
 
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 900px) {
   .cards__image {
-    width: calc(282vw / 720 * 100);
-    height: calc(282vw / 720 * 100);
+    width: calc(282vw / 900 * 100);
+    height: calc(282vw / 900 * 100);
   }
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 600px) {
   .cards__image {
     width: 282px;
     height: 282px;

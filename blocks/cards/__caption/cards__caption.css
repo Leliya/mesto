@@ -27,14 +27,14 @@
   }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 900px) {
   .cards__caption {
     padding: 0 14px;
-    margin-top: calc(20vw / 600 * 100);
+    margin-top: calc(20vw / 900 * 100);
   }
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 600px) {
   .cards__caption {
     padding: 0 20px;
     margin-top: 22px;

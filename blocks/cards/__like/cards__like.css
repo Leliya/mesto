@@ -2,7 +2,6 @@
   min-width: 22px;
   min-height: 19px;
   background-image: url("../../../images/cards-like.svg");
-  opacity: 1;
   transition: opacity 0.4s ease;
   background-size: contain;
   background-repeat: no-repeat;
@@ -13,7 +12,7 @@
 }
 
 .cards__like:hover {
-  opacity: 0.6;
+  opacity: 0.5;
   cursor: pointer;
 }
 
@@ -38,21 +37,21 @@
   }
 }
 
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 900px) {
   .cards__like {
     min-width: 22px;
     min-height: 19px;
   }
 }
 
-@media screen and (max-width: 600px) {
+/*@media screen and (max-width: 600px) {
   .cards__like {
     min-width: calc(22vw / 600 * 100);
     min-height: calc(19vw / 600 * 100);
   }
-}
+}*/
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 600px) {
   .cards__like {
     min-width: 22px;
     min-height: 19px;
