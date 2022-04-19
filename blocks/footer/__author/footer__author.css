@@ -14,13 +14,6 @@
   }
 }
 
-/*@media screen and (max-width: 600px) {
-  .footer__author {
-    font-size: calc(16vw / 600 * 100);
-    padding: calc(50vw / 600 * 100) 0 calc(40vw / 600 * 100);
-  }
-}*/
-
 @media screen and (max-width: 600px) {
   .footer__author {
     font-size: 14px;
