@@ -56,7 +56,7 @@ initialCards.forEach(function (item) {
   const cardsLike = cardsItem.querySelector(".cards__like");
   const cardsDelete = cardsItem.querySelector(".cards__delete");
   cardsName.textContent = item.name;
-  cardsName.alt = item.name;
+  cardsImage.alt = item.name;
   cardsImage.src = item.link;
 
   cardsLike.addEventListener("click", function (evt) {
@@ -74,6 +74,7 @@ initialCards.forEach(function (item) {
   function openPopupPhoto() {
     titlePhotoPopup.textContent = item.name;
     imagePhotoPopup.src = item.link;
+    imagePhotoPopup.alt = item.name;
     popupPhoto.classList.add("popup_opened");
   }
 
@@ -126,6 +127,7 @@ function formSubmitAddHandler(evt) {
   const cardsDelete = cardsItem.querySelector(".cards__delete");
   cardsName.textContent = titleInput.value;
   cardsImage.src = linkInput.value;
+  cardsImage.alt = titleInput.value;
   cardsLike.addEventListener("click", function (evt) {
     const eventTarget = evt.target;
     eventTarget.classList.toggle("cards__like_active");
@@ -136,6 +138,7 @@ function formSubmitAddHandler(evt) {
   function openPopupPhoto() {
     titlePhotoPopup.textContent = titleInput.value;
     imagePhotoPopup.src = linkInput.value;
+    imagePhotoPopup.alt = titleInput.value;
     popupPhoto.classList.toggle("popup_opened");
   }
 
