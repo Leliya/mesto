@@ -42,8 +42,6 @@ function cloneCard(name, link) {
   cardImage.alt = name;
   cardImage.src = link;
 
-  
-
   //Функция лайка карточек
   function handleLikeCard(event) {
     event.target.classList.toggle('cards__like_active');
@@ -89,26 +87,27 @@ function openPopup(popup) {
   popup.classList.add('popup_opened');
 }
 
+//Подгрузка в поля формы значений из профиля
+function openPopupProfile() {
+  nameInput.value = nameProfile.textContent;
+  activityInput.value = activityProfile.textContent;
+  
+  openPopup(popupProfile);
+}
+
 //Функция закрытия попапа
 function closePopup(popup) {
   popup.classList.remove('popup_opened');
 }
 
-function fillInput(){
-    nameInput.value = nameProfile.textContent
-    activityInput.value = activityProfile.textContent;
-  }
-
 //Функция отправки заполненной формы редактирования профиля
 function submitFormProfileHandler(evt) {
   evt.preventDefault();
-
 
   nameProfile.textContent = nameInput.value;
   activityProfile.textContent = activityInput.value;
 
   closePopup(popupProfile);
-  fillInput()
 }
 
 //Функция отправки заполненной формы добавления новой карточки
@@ -122,17 +121,15 @@ function submitFormAddHandler(evt) {
 
   closePopup(popupAddPhoto);
 
-  //Возвращение исходных значений плейсхолдеров
-titleInput.value = '';
-linkInput.value = '';
+  //Сброс значений полей
+  titleInput.value = '';
+  linkInput.value = '';
 }
-
-fillInput()
 
 //Обработчики кликов, связанных  с редактированием профиля
 formElementsPopupProfile.addEventListener('submit', submitFormProfileHandler);
 profileEditButton.addEventListener('click', () => {
-  openPopup(popupProfile);
+  openPopupProfile();
 });
 popupProfileCloseButton.addEventListener('click', () => {
   closePopup(popupProfile);
@@ -151,3 +148,10 @@ formElementsPopupAdd.addEventListener('submit', submitFormAddHandler);
 popupPhotoCloseButton.addEventListener('click', () => {
   closePopup(popupPhoto);
 });
+
+function openPopupProfile() {
+  nameInput.value = nameProfile.textContent;
+  activityInput.value = activityProfile.textContent;
+
+  openPopup(popupProfile);
+}
