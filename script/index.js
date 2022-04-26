@@ -1,73 +1,77 @@
-const popupProfile = document.querySelector(".popup_type_profile");
-const popupAddPhoto = document.querySelector(".popup_type_add-photo");
-const popupPhoto = document.querySelector(".popup_type_photo");
-const profileEditButton = document.querySelector(".profile__edit-button");
-const profileAddButton = document.querySelector(".profile__add-button");
+const popupProfile = document.querySelector('.popup_type_profile');
+const popupAddPhoto = document.querySelector('.popup_type_add-photo');
+const popupPhoto = document.querySelector('.popup_type_photo');
+const profileEditButton = document.querySelector('.profile__edit-button');
+const profileAddButton = document.querySelector('.profile__add-button');
 const popupProfileCloseButton = popupProfile.querySelector(
-  ".popup__close-button"
+  '.popup__close-button'
 );
-const popupAddCloseButton = popupAddPhoto.querySelector(".popup__close-button");
-const popupPhotoCloseButton = popupPhoto.querySelector(".popup__close-button");
+const popupAddCloseButton = popupAddPhoto.querySelector('.popup__close-button');
+const popupPhotoCloseButton = popupPhoto.querySelector('.popup__close-button');
 const formElementsPopupProfile =
-  popupProfile.querySelector(".popup__container");
-const formElementsPopupAdd = popupAddPhoto.querySelector(".popup__container");
+  popupProfile.querySelector('.popup__container');
+const formElementsPopupAdd = popupAddPhoto.querySelector('.popup__container');
 
 const nameInput = formElementsPopupProfile.querySelector(
-  ".popup__input_type_name"
+  '.popup__input_type_name'
 );
 const activityInput = formElementsPopupProfile.querySelector(
-  ".popup__input_type_activity"
+  '.popup__input_type_activity'
 );
 const titleInput = formElementsPopupAdd.querySelector(
-  ".popup__input_type_title"
+  '.popup__input_type_title'
 );
-const linkInput = formElementsPopupAdd.querySelector(".popup__input_type_link");
-const nameProfile = document.querySelector(".profile__name");
-const activityProfile = document.querySelector(".profile__activity");
-const cardImage = document.querySelector(".cards__image");
-const titlePhotoPopup = popupPhoto.querySelector(".popup__name");
-const imagePhotoPopup = popupPhoto.querySelector(".popup__image");
-const templateCard = document.querySelector("#cards-item");
-const cardsContainer = document.querySelector(".cards");
+const linkInput = formElementsPopupAdd.querySelector('.popup__input_type_link');
+const nameProfile = document.querySelector('.profile__name');
+const activityProfile = document.querySelector('.profile__activity');
+const cardImage = document.querySelector('.cards__image');
+const titlePhotoPopup = popupPhoto.querySelector('.popup__name');
+const imagePhotoPopup = popupPhoto.querySelector('.popup__image');
+const templateCard = document.querySelector('#cards-item');
+const cardsContainer = document.querySelector('.cards');
 
 //Копирование карточки из шаблона
 function cloneCard(name, link) {
   const cardItem = templateCard.content.cloneNode(true);
-  const cardImage = cardItem.querySelector(".cards__image");
-  const cardName = cardItem.querySelector(".cards__name");
-  const cardLike = cardItem.querySelector(".cards__like");
-  const cardsDelete = cardItem.querySelector(".cards__delete");
+  const cardImage = cardItem.querySelector('.cards__image');
+  const cardName = cardItem.querySelector('.cards__name');
+  const cardLike = cardItem.querySelector('.cards__like');
+  const cardDelete = cardItem.querySelector('.cards__delete');
 
   cardName.textContent = name;
   cardImage.alt = name;
   cardImage.src = link;
 
+  
+
   //Функция лайка карточек
   function handleLikeCard(event) {
-    event.target.classList.toggle("cards__like_active");
+    event.target.classList.toggle('cards__like_active');
   }
 
   //Функция удаления карточки
   function deleteCard() {
-    cardsDelete.closest(".cards__item").remove();
+    cardDelete.closest('.cards__item').remove();
   }
 
   //Обработчик клика на изображении карточки
-  cardImage.addEventListener("click", function (evt) {
+  cardImage.addEventListener('click', function (evt) {
     titlePhotoPopup.textContent = evt.target.alt;
     imagePhotoPopup.src = evt.target.src;
     imagePhotoPopup.alt = evt.target.alt;
     openPopup(popupPhoto);
   });
-//Обработчик клика на кнопке лайк
-  cardLike.addEventListener("click", handleLikeCard);
 
-//Обработчик клика на кнопке удаления карточки
-  cardsDelete.addEventListener("click", deleteCard);
+  //Обработчик клика на кнопке лайк
+  cardLike.addEventListener('click', handleLikeCard);
 
-  return(cardItem);
+  //Обработчик клика на кнопке удаления карточки
+  cardDelete.addEventListener('click', deleteCard);
+
+  return cardItem;
 }
 
+//Добавление клонированной карточки
 function appendCard(card) {
   cardsContainer.prepend(card);
 }
@@ -82,29 +86,29 @@ initialCards.forEach(function (item) {
 
 //Функция открытия попапа
 function openPopup(popup) {
-  popup.classList.add("popup_opened");
+  popup.classList.add('popup_opened');
 }
 
 //Функция закрытия попапа
 function closePopup(popup) {
-  popup.classList.remove("popup_opened");
+  popup.classList.remove('popup_opened');
 }
 
-//Функция открытия попапа добавления фото
-//function openPopupAddPhoto() {
-//  titleInput.value = titleInput.ariaPlaceholder;
-//  linkInput.value = linkInput.ariaPlaceholder;
-//  popupAddPhoto.classList.add("popup_opened");
-//}
+function fillInput(){
+    nameInput.value = nameProfile.textContent
+    activityInput.value = activityProfile.textContent;
+  }
 
 //Функция отправки заполненной формы редактирования профиля
 function submitFormProfileHandler(evt) {
   evt.preventDefault();
 
+
   nameProfile.textContent = nameInput.value;
   activityProfile.textContent = activityInput.value;
 
   closePopup(popupProfile);
+  fillInput()
 }
 
 //Функция отправки заполненной формы добавления новой карточки
@@ -117,29 +121,33 @@ function submitFormAddHandler(evt) {
   appendCard(cloneCard(title, image));
 
   closePopup(popupAddPhoto);
-  titleInput.value = titleInput.ariaPlaceholder;
-linkInput.value = linkInput.ariaPlaceholder;
+
+  //Возвращение исходных значений плейсхолдеров
+titleInput.value = '';
+linkInput.value = '';
 }
 
+fillInput()
+
 //Обработчики кликов, связанных  с редактированием профиля
-formElementsPopupProfile.addEventListener("submit", submitFormProfileHandler);
-profileEditButton.addEventListener("click", () => {
+formElementsPopupProfile.addEventListener('submit', submitFormProfileHandler);
+profileEditButton.addEventListener('click', () => {
   openPopup(popupProfile);
 });
-popupProfileCloseButton.addEventListener("click", () => {
+popupProfileCloseButton.addEventListener('click', () => {
   closePopup(popupProfile);
 });
 
 //Обработчики кликов, связанных  с добавлением новой карточки
-profileAddButton.addEventListener("click", () => {
+profileAddButton.addEventListener('click', () => {
   openPopup(popupAddPhoto);
 });
-popupAddCloseButton.addEventListener("click", () => {
+popupAddCloseButton.addEventListener('click', () => {
   closePopup(popupAddPhoto);
 });
-formElementsPopupAdd.addEventListener("submit", submitFormAddHandler);
+formElementsPopupAdd.addEventListener('submit', submitFormAddHandler);
 
 //Обработчик клика на кнопке закрытия попапа с просмотром фото
-popupPhotoCloseButton.addEventListener("click", () => {
+popupPhotoCloseButton.addEventListener('click', () => {
   closePopup(popupPhoto);
 });
