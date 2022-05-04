@@ -148,10 +148,3 @@ formElementsPopupAdd.addEventListener('submit', submitFormAddHandler);
 popupPhotoCloseButton.addEventListener('click', () => {
   closePopup(popupPhoto);
 });
-
-function openPopupProfile() {
-  nameInput.value = nameProfile.textContent;
-  activityInput.value = activityProfile.textContent;
-
-  openPopup(popupProfile);
-}
