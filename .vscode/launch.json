@@ -4,12 +4,18 @@
   // Для получения дополнительной информации посетите: https://go.microsoft.com/fwlink/?linkid=830387
   "version": "0.2.0",
   "configurations": [
-    
     {
-      "type": "pwa-msedge",
+      "name": "Launch Chrome",
       "request": "launch",
-      "name": "Open index.html",
+      "type": "chrome",
       "file": "c:\\Users\\Мария\\dev\\mesto\\index.html"
-    }
+    },
+    //{
+    //  "type": "pwa-msedge",
+    //  "request": "launch",
+    //  "name": "Open index.html",
+    //  "file": "c:\\Users\\Мария\\dev\\mesto\\index.html"
+//
+//    }
   ]
 }
