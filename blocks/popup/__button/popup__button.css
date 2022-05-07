@@ -3,7 +3,7 @@
   border: none;
   cursor: pointer;
   padding: 0;
-  margin: 49px 0 0;
+  margin: 50px 0 0;
   width: 100%;
   height: 50px;
   background-color: #000;
@@ -22,7 +22,7 @@
 
 @media screen and (max-width: 845px) {
   .popup__button {
-    margin: 45px 0 0;
+    margin: 42px 0 0;
     height: 46px;
     font-size: calc(18vw / 845 * 100);
   }
