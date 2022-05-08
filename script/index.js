@@ -82,47 +82,20 @@ function openCardImage(evt) {
 }
 
 function openPopup(popup) {
-  popup.classList.add('popup_opened');
-  switch (popup) {
-    case popupProfile:
-      window.addEventListener('keydown', closePopupEscProfile);
-      break;
-    case popupAddPhoto:
-      window.addEventListener('keydown', closePopupEscAddPhoto);
-      break;
-    case popupPhoto:
-      window.addEventListener('keydown', closePopupEscPhoto);
-  }
+  popup.classList.add("popup_opened"); 
+  document.addEventListener('keydown', closePopupEsc);
 }
 
 function closePopup(popup) {
   popup.classList.remove('popup_opened');
+  document.removeEventListener('keydown', closePopupEsc);
 }
 
-function closePopupEsc(evt, popup) {
+function closePopupEsc(evt) {
   if (evt.key === 'Escape') {
-    closePopup(popup);
-    switch (popup) {
-      case popupProfile:
-        window.removeEventListener('keydown', closePopupEscProfile);
-        break;
-      case popupAddPhoto:
-        window.removeEventListener('keydown', closePopupEscAddPhoto);
-        break;
-      case popupPhoto:
-        window.removeEventListener('keydown', closePopupEscPhoto);
-    }
+    const popupOpened = document.querySelector('.popup_opened')
+    closePopup(popupOpened)
   }
-}
-
-function closePopupEscProfile(evt) {
-  closePopupEsc(evt, popupProfile);
-}
-function closePopupEscAddPhoto(evt) {
-  closePopupEsc(evt, popupAddPhoto);
-}
-function closePopupEscPhoto(evt) {
-  closePopupEsc(evt, popupPhoto);
 }
 
 function openPopupProfile() {
