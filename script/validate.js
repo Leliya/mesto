@@ -12,9 +12,6 @@ function enableValidation(obj = {}) {
   formList.forEach((formElement) => {
     formElement.addEventListener('submit', (evt) => {
       evt.preventDefault();
-      if (evt.key === 'Enter') {
-        return false;
-      }
     });
     setEventListeners(formElement, obj);
   });
@@ -28,12 +25,6 @@ const setEventListeners = (formElement, obj) => {
     inputElement.addEventListener('input', () => {
       isValid(formElement, inputElement, obj);
       disableButton(inputList, formButton, obj);
-      inputElement.addEventListener('keydown', (evt) => {
-        if (evt.key === 'Enter' && hasInvalidInput(inputList)) {
-          evt.preventDefault();
-          return false;
-        }
-      });
     });
   });
 };
@@ -60,7 +51,9 @@ function hasInvalidInput(inputList) {
 function disableButton(inputList, formButton, obj) {
   if (hasInvalidInput(inputList)) {
     formButton.classList.add(obj.inactiveButtonClass);
+    formButton.setAttribute('disabled', true);
   } else {
+    formButton.removeAttribute('disabled');
     formButton.classList.remove(obj.inactiveButtonClass);
   }
 }
