@@ -60,7 +60,7 @@ export class Card {
   }
 
   _deleteCard() {
-    this._cardDelete.closest('.cards__item').remove();
+    this._cardItem.remove();
   }
 
   _setEventListeners() {

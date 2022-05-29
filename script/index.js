@@ -58,10 +58,28 @@ initialCards.forEach(function (item) {
   makeCard(title, image);
 });
 
-forms.forEach((form) => {
-  const validate = new FormValidator(objValid, form);
-  validate.enableValidation();
-});
+// forms.forEach((form) => {
+//   const validate = new FormValidator(objValid, form);
+//   validate.enableValidation();
+// });
+
+const formValidators = {}
+
+// Включение валидации
+const enableValidation = (config) => {
+  const formList = Array.from(document.querySelectorAll(config.formElement))
+  formList.forEach((formItem) => {
+    const validator = new FormValidator(config, formItem)
+// получаем данные из атрибута `name` у формы
+    const formName = formItem.getAttribute('name')
+
+   // вот тут в объект записываем под именем формы
+    formValidators[formName] = validator;
+   validator.enableValidation();
+  });
+};
+
+enableValidation(objValid);
 
 function openPopup(popup) {
   popup.classList.add('popup_opened');
@@ -87,7 +105,7 @@ function openPopupProfile() {
   openPopup(popupProfile);
 }
 
-function closePopupOverlay(popup) {
+function handlePopupClose(popup) {
   popup.addEventListener('click', (evt) => {
     if (
       evt.target.classList.contains('popup') ||
@@ -110,7 +128,7 @@ function handleCardClick(name, link) {
 }
 
 
-function submitFormProfileHandler(evt) {
+function handleProfileFormSubmit(evt) {
   evt.preventDefault();
 
   nameProfile.textContent = nameInput.value;
@@ -119,7 +137,7 @@ function submitFormProfileHandler(evt) {
   closePopup(popupProfile);
 }
 
-function submitFormAddHandler(evt) {
+function handleAddFormSubmit(evt) {
   evt.preventDefault();
 
   const title = titleInput.value;
@@ -133,21 +151,16 @@ function submitFormAddHandler(evt) {
 }
 
 const popupList = document.querySelectorAll('.popup');
-popupList.forEach((popup) => closePopupOverlay(popup));
+popupList.forEach(handlePopupClose);
 
 profileEditButton.addEventListener('click', () => {
+  formValidators['profile'].resetValidation()
   openPopupProfile();
 });
 profileAddButton.addEventListener('click', () => {
-  const submitButtonPopup = popupAddPhoto.querySelector('.popup__button');
-  submitButtonPopup.classList.add('popup__button_disabled');
-  submitButtonPopup.setAttribute('disabled', true);
+  formValidators['addPhoto'].resetValidation()
   openPopup(popupAddPhoto);
 });
 
-popupPhotoCloseButton.addEventListener('click', () => {
-  closePopup(popupPhoto);
-});
-
-formElementsPopupProfile.addEventListener('submit', submitFormProfileHandler);
-formElementsPopupAdd.addEventListener('submit', submitFormAddHandler);
+formElementsPopupProfile.addEventListener('submit', handleProfileFormSubmit);
+formElementsPopupAdd.addEventListener('submit', handleAddFormSubmit);
