@@ -29,16 +29,19 @@ export class FormValidator {
     const inputList = Array.from(
       this._form.querySelectorAll(this._inputElement)
     );
-    this._disableButton(inputList);
+    this._toggleButtonState(inputList);
     inputList.forEach((inputItem) => {
       inputItem.addEventListener('input', () => {
         this._isValid(inputItem);
-        this._disableButton(inputList);
+        this._toggleButtonState(inputList);
       });
     });
   }
 
   _isValid(inputItem) {
+    this._errorElement = this._form.querySelector(
+      `.${inputItem.id}-input-error`
+    );
     if (!inputItem.validity.valid) {
       this._showInputError(inputItem, inputItem.validationMessage);
     } else {
@@ -52,35 +55,27 @@ export class FormValidator {
     });
   }
 
-  _disableButton(inputs) {
+  _toggleButtonState(inputs) {
     if (this._hasInvalidInput(inputs)) {
-      this._form
-        .querySelector(this._formButton)
-        .classList.add(this._inactiveButtonClass);
-      this._form.querySelector(this._formButton).setAttribute('disabled', true);
+      this._submitButton = this._form.querySelector(this._formButton);
+      this._submitButton.classList.add(this._inactiveButtonClass);
+      this._submitButton.setAttribute('disabled', true);
     } else {
-      this._form.querySelector(this._formButton).removeAttribute('disabled');
-      this._form
-        .querySelector(this._formButton)
+      this._submitButton.removeAttribute('disabled');
+      this._submitButton
         .classList.remove(this._inactiveButtonClass);
     }
   }
 
   _showInputError(inputElement, errorMessage) {
     inputElement.classList.add(this._inputInvalidClass);
-    const errorElement = this._form.querySelector(
-      `.${inputElement.id}-input-error`
-    );
-    errorElement.textContent = errorMessage;
-    errorElement.classList.add(this._errorClass);
+    this._errorElement.textContent = errorMessage;
+    this._errorElement.classList.add(this._errorClass);
   }
 
   _hideInputError(inputElement) {
     inputElement.classList.remove(this._inputInvalidClass);
-    const errorElement = this._form.querySelector(
-      `.${inputElement.id}-input-error`
-    );
-    errorElement.classList.remove(this._errorClass);
-    errorElement.textContent = '';
+    this._errorElement.classList.remove(this._errorClass);
+    this._errorElement.textContent = '';
   }
 }

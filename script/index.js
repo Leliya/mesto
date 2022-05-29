@@ -27,10 +27,10 @@ const activityProfile = document.querySelector('.profile__activity');
 
 const cardsContainer = document.querySelector('.cards');
 
-import { initialCards, Card } from './cards.js';
-import { objValid, FormValidator } from './validate.js';
+import { initialCards, Card } from './Card.js';
+import { objValid, FormValidator } from './FormValidator.js';
 
-function appendCard(card) {
+function prependCard(card) {
   cardsContainer.prepend(card);
 }
 
@@ -43,18 +43,18 @@ function makeCard(title, image) {
     title,
     image,
     '#cards-item',
-    openPopupPhoto,
-    popupPhoto
+    handleCardClick
   );
 
   const cardElement = card.generate();
 
-  appendCard(cardElement);
+  prependCard(cardElement);
 }
 
 initialCards.forEach(function (item) {
   const title = item.name;
   const image = item.link;
+
   makeCard(title, image);
 });
 
@@ -97,6 +97,18 @@ function closePopupOverlay(popup) {
     }
   });
 }
+
+function handleCardClick(name, link) {
+  const popupPhotoName = popupPhoto.querySelector('.popup__name');
+  const popupPhotoImage = popupPhoto.querySelector('.popup__image');
+  
+  popupPhotoName.textContent = name;
+  popupPhotoImage.src = link;
+  popupPhotoImage.alt = name;
+
+  openPopup(popupPhoto);
+}
+
 
 function submitFormProfileHandler(evt) {
   evt.preventDefault();
