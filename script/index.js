@@ -27,10 +27,10 @@ const activityProfile = document.querySelector('.profile__activity');
 
 const cardsContainer = document.querySelector('.cards');
 
-import { initialCards, Card } from './cards.js';
-import { objValid, FormValidator } from './validate.js';
+import { initialCards, Card } from './Card.js';
+import { objValid, FormValidator } from './FormValidator.js';
 
-function appendCard(card) {
+function prependCard(card) {
   cardsContainer.prepend(card);
 }
 
@@ -43,25 +43,43 @@ function makeCard(title, image) {
     title,
     image,
     '#cards-item',
-    openPopupPhoto,
-    popupPhoto
+    handleCardClick
   );
 
   const cardElement = card.generate();
 
-  appendCard(cardElement);
+  prependCard(cardElement);
 }
 
 initialCards.forEach(function (item) {
   const title = item.name;
   const image = item.link;
+
   makeCard(title, image);
 });
 
-forms.forEach((form) => {
-  const validate = new FormValidator(objValid, form);
-  validate.enableValidation();
-});
+// forms.forEach((form) => {
+//   const validate = new FormValidator(objValid, form);
+//   validate.enableValidation();
+// });
+
+const formValidators = {}
+
+// Включение валидации
+const enableValidation = (config) => {
+  const formList = Array.from(document.querySelectorAll(config.formElement))
+  formList.forEach((formItem) => {
+    const validator = new FormValidator(config, formItem)
+// получаем данные из атрибута `name` у формы
+    const formName = formItem.getAttribute('name')
+
+   // вот тут в объект записываем под именем формы
+    formValidators[formName] = validator;
+   validator.enableValidation();
+  });
+};
+
+enableValidation(objValid);
 
 function openPopup(popup) {
   popup.classList.add('popup_opened');
@@ -87,7 +105,7 @@ function openPopupProfile() {
   openPopup(popupProfile);
 }
 
-function closePopupOverlay(popup) {
+function handlePopupClose(popup) {
   popup.addEventListener('click', (evt) => {
     if (
       evt.target.classList.contains('popup') ||
@@ -98,7 +116,19 @@ function closePopupOverlay(popup) {
   });
 }
 
-function submitFormProfileHandler(evt) {
+function handleCardClick(name, link) {
+  const popupPhotoName = popupPhoto.querySelector('.popup__name');
+  const popupPhotoImage = popupPhoto.querySelector('.popup__image');
+  
+  popupPhotoName.textContent = name;
+  popupPhotoImage.src = link;
+  popupPhotoImage.alt = name;
+
+  openPopup(popupPhoto);
+}
+
+
+function handleProfileFormSubmit(evt) {
   evt.preventDefault();
 
   nameProfile.textContent = nameInput.value;
@@ -107,7 +137,7 @@ function submitFormProfileHandler(evt) {
   closePopup(popupProfile);
 }
 
-function submitFormAddHandler(evt) {
+function handleAddFormSubmit(evt) {
   evt.preventDefault();
 
   const title = titleInput.value;
@@ -121,21 +151,16 @@ function submitFormAddHandler(evt) {
 }
 
 const popupList = document.querySelectorAll('.popup');
-popupList.forEach((popup) => closePopupOverlay(popup));
+popupList.forEach(handlePopupClose);
 
 profileEditButton.addEventListener('click', () => {
+  formValidators['profile'].resetValidation()
   openPopupProfile();
 });
 profileAddButton.addEventListener('click', () => {
-  const submitButtonPopup = popupAddPhoto.querySelector('.popup__button');
-  submitButtonPopup.classList.add('popup__button_disabled');
-  submitButtonPopup.setAttribute('disabled', true);
+  formValidators['addPhoto'].resetValidation()
   openPopup(popupAddPhoto);
 });
 
-popupPhotoCloseButton.addEventListener('click', () => {
-  closePopup(popupPhoto);
-});
-
-formElementsPopupProfile.addEventListener('submit', submitFormProfileHandler);
-formElementsPopupAdd.addEventListener('submit', submitFormAddHandler);
+formElementsPopupProfile.addEventListener('submit', handleProfileFormSubmit);
+formElementsPopupAdd.addEventListener('submit', handleAddFormSubmit);

@@ -27,12 +27,11 @@ export const initialCards = [
 ];
 
 export class Card {
-  constructor(name, link, cardSelector, openPopup, popup) {
+  constructor(name, link, cardSelector, handleCardClick) {
     this._name = name;
     this._link = link;
     this._cardSelector = cardSelector;
-    this._popup = popup;
-    this._openPopup = openPopup;
+    this._handleCardClick = handleCardClick;
   }
 
   _cloneCard() {
@@ -44,9 +43,12 @@ export class Card {
 
   generate() {
     this._cardItem = this._cloneCard();
-    this._cardItem.querySelector('.cards__image').src = this._link;
+    this._cardImage = this._cardItem.querySelector('.cards__image');
+    this._cardImage.src = this._link;
     this._cardItem.querySelector('.cards__name').textContent = this._name;
-    this._cardItem.querySelector('.cards__image').alt = this._name;
+    this._cardImage.alt = this._name;
+    this._cardLike = this._cardItem.querySelector('.cards__like');
+    this._cardDelete = this._cardItem.querySelector('.cards__delete');
 
     this._setEventListeners();
 
@@ -54,39 +56,24 @@ export class Card {
   }
 
   _handleLikeCard() {
-    this._cardItem
-      .querySelector('.cards__like')
-      .classList.toggle('cards__like_active');
+    this._cardLike.classList.toggle('cards__like_active');
   }
 
   _deleteCard() {
-    this._cardItem
-      .querySelector('.cards__delete')
-      .closest('.cards__item')
-      .remove();
+    this._cardItem.remove();
   }
 
   _setEventListeners() {
-    this._cardItem
-      .querySelector('.cards__like')
-      .addEventListener('click', () => {
-        this._handleLikeCard();
-      });
+    this._cardLike.addEventListener('click', () => {
+      this._handleLikeCard();
+    });
 
-    this._cardItem
-      .querySelector('.cards__delete')
-      .addEventListener('click', () => {
-        this._deleteCard();
-      });
+    this._cardDelete.addEventListener('click', () => {
+      this._deleteCard();
+    });
 
-    this._cardItem
-      .querySelector('.cards__image')
-      .addEventListener('click', () => {
-        debugger;
-        this._popup.querySelector('.popup__name').textContent = this._name;
-        this._popup.querySelector('.popup__image').src = this._link;
-        this._popup.querySelector('.popup__image').alt = this._name;
-        this._openPopup(this._popup);
-      });
+    this._cardImage.addEventListener('click', () => {
+      this._handleCardClick(this._name, this._link);
+    });
   }
 }
