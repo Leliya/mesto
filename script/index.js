@@ -38,16 +38,13 @@ const openPopupPhoto = () => {
   openPopup(popupPhoto);
 };
 
+function createCard(title, image) {
+  const card = new Card(title, image, '#cards-item', handleCardClick);
+  return card.generate();
+}
+
 function makeCard(title, image) {
-  const card = new Card(
-    title,
-    image,
-    '#cards-item',
-    handleCardClick
-  );
-
-  const cardElement = card.generate();
-
+  const cardElement = createCard(title, image);
   prependCard(cardElement);
 }
 
@@ -58,24 +55,16 @@ initialCards.forEach(function (item) {
   makeCard(title, image);
 });
 
-// forms.forEach((form) => {
-//   const validate = new FormValidator(objValid, form);
-//   validate.enableValidation();
-// });
+const formValidators = {};
 
-const formValidators = {}
-
-// Включение валидации
 const enableValidation = (config) => {
-  const formList = Array.from(document.querySelectorAll(config.formElement))
+  const formList = Array.from(document.querySelectorAll(config.formElement));
   formList.forEach((formItem) => {
-    const validator = new FormValidator(config, formItem)
-// получаем данные из атрибута `name` у формы
-    const formName = formItem.getAttribute('name')
+    const validator = new FormValidator(config, formItem);
+    const formName = formItem.getAttribute('name');
 
-   // вот тут в объект записываем под именем формы
     formValidators[formName] = validator;
-   validator.enableValidation();
+    validator.enableValidation();
   });
 };
 
@@ -106,7 +95,7 @@ function openPopupProfile() {
 }
 
 function handlePopupClose(popup) {
-  popup.addEventListener('click', (evt) => {
+  popup.addEventListener('mousedown', (evt) => {
     if (
       evt.target.classList.contains('popup') ||
       evt.target.classList.contains('popup__close-button')
@@ -119,14 +108,13 @@ function handlePopupClose(popup) {
 function handleCardClick(name, link) {
   const popupPhotoName = popupPhoto.querySelector('.popup__name');
   const popupPhotoImage = popupPhoto.querySelector('.popup__image');
-  
+
   popupPhotoName.textContent = name;
   popupPhotoImage.src = link;
   popupPhotoImage.alt = name;
 
   openPopup(popupPhoto);
 }
-
 
 function handleProfileFormSubmit(evt) {
   evt.preventDefault();
@@ -154,11 +142,11 @@ const popupList = document.querySelectorAll('.popup');
 popupList.forEach(handlePopupClose);
 
 profileEditButton.addEventListener('click', () => {
-  formValidators['profile'].resetValidation()
+  formValidators['profile'].resetValidation();
   openPopupProfile();
 });
 profileAddButton.addEventListener('click', () => {
-  formValidators['addPhoto'].resetValidation()
+  formValidators['addPhoto'].resetValidation();
   openPopup(popupAddPhoto);
 });
 
