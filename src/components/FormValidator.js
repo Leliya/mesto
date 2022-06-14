@@ -1,13 +1,4 @@
-export const objValid = {
-  formElement: '.popup__form',
-  inputElement: '.popup__input',
-  formButton: '.popup__button',
-  inactiveButtonClass: 'popup__button_disabled',
-  inputInvalidClass: 'popup__input-invalid',
-  errorClass: 'popup__input-error',
-};
-
-export class FormValidator {
+export default class FormValidator {
   constructor(obj, form) {
     this._formElement = obj.formElement;
     this._inputElement = obj.inputElement;

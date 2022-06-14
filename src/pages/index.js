@@ -1,19 +1,20 @@
 import './index.css';
-import { initialCards, Card } from '../components/Card.js';
-import { objValid, FormValidator } from '../components/FormValidator.js';
+import Card from '../components/Card.js';
+import FormValidator from '../components/FormValidator.js';
 import PopupWithImage from '../components/PopupWithImage.js';
 import PopupWithForm from '../components/PopupWithForm.js';
 import UserInfo from '../components/UserInfo.js';
 import Section from '../components/Section';
 
-const popupProfile = document.querySelector('.popup_type_profile');
-const profileEditButton = document.querySelector('.profile__edit-button');
-const profileAddButton = document.querySelector('.profile__add-button');
-
-const nameInput = popupProfile.querySelector('.popup__input_type_name');
-const activityInput = popupProfile.querySelector('.popup__input_type_activity');
-
-const formValidators = {};
+import {
+  profileEditButton,
+  profileAddButton,
+  nameInput,
+  activityInput,
+  formValidators,
+  initialCards,
+  objValid,
+} from '../utils/constants.js';
 
 const enableValidation = (config) => {
   const formList = Array.from(document.querySelectorAll(config.formElement));
@@ -26,45 +27,37 @@ const enableValidation = (config) => {
   });
 };
 
-enableValidation(objValid);
+const popupImage = new PopupWithImage('.popup_type_photo');
 
-const cardDefault = new Section(
+const cardElement = ({ title, link }) => {
+  const card = new Card(
+    {
+      title,
+      link,
+    },
+    '#cards-item',
+    () => {
+      popupImage.open(title, link);
+    }
+  );
+  return card.generate({ title, link });
+};
+
+const cardList = new Section(
   {
     items: initialCards,
     renderer: (item) => {
-      const cardElement = new Card({
-        data: item,
-        cardSelector: '#cards-item',
-        handleCardClick: (name, link) => {
-          const popupImage = new PopupWithImage('.popup_type_photo');
-          popupImage.setEventListeners();
-          popupImage.open(name, link);
-        },
-      });
-
-      cardDefault.addItem(cardElement.generate());
+      const cardNew = cardElement(item);
+      cardList.addItem(cardNew);
     },
   },
   '.cards'
 );
 
-cardDefault.renderItems();
-
 const popupAddPhoto = new PopupWithForm({
   popupSelector: '.popup_type_add-photo',
   handleAddFormSubmit: (data) => {
-    const cardNew = new Section({}, '.cards');
-    const cardElement = new Card({
-      data,
-      cardSelector: '#cards-item',
-      handleCardClick: (name, link) => {
-        const popupImage = new PopupWithImage('.popup_type_photo');
-        popupImage.setEventListeners();
-        popupImage.open(name, link);
-      },
-    });
-
-    cardNew.addItem(cardElement.generate());
+    cardList.addItem(cardElement(data));
     popupAddPhoto.close();
   },
 });
@@ -74,23 +67,31 @@ const userInfo = new UserInfo({
   activity: '.profile__activity',
 });
 
+const inputValue = ({ userName, userActivity }) => {
+  nameInput.value = userName;
+  activityInput.value = userActivity;
+};
+
+const popupProfile = new PopupWithForm({
+  popupSelector: '.popup_type_profile',
+  handleAddFormSubmit: (user) => {
+    userInfo.setUserInfo(user);
+    popupProfile.close();
+  },
+});
+
+cardList.renderItems();
+
+enableValidation(objValid);
+
+popupImage.setEventListeners();
+
+popupProfile.setEventListeners();
+
+popupAddPhoto.setEventListeners();
+
 profileEditButton.addEventListener('click', () => {
   formValidators['profile'].resetValidation();
-
-  const inputValue = ({ name, activity }) => {
-    nameInput.value = name;
-    activityInput.value = activity;
-  };
-
-  const popupProfile = new PopupWithForm({
-    popupSelector: '.popup_type_profile',
-    handleAddFormSubmit: (user) => {
-      userInfo.setUserInfo(user);
-      popupProfile.close();
-      inputValue(userInfo.getUserInfo());
-    },
-  });
-  popupProfile.setEventListeners();
   popupProfile.open();
   inputValue(userInfo.getUserInfo());
 });
@@ -99,4 +100,3 @@ profileAddButton.addEventListener('click', () => {
   formValidators['addPhoto'].resetValidation();
   popupAddPhoto.open();
 });
-popupAddPhoto.setEventListeners();
