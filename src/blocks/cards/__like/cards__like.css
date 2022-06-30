@@ -1,14 +1,13 @@
 .cards__like {
   min-width: 22px;
   min-height: 19px;
-  background-image: url("../../../images/cards-like.svg");
+  background-image: url('../../../images/cards-like.svg');
   transition: opacity 0.4s ease;
   background-size: contain;
   background-repeat: no-repeat;
   border: none;
   background-color: white;
   padding: 0;
-  align-self: center;
 }
 
 .cards__like:hover {

@@ -6,7 +6,7 @@
   color: #000000;
   min-height: 27px;
   padding-bottom: 5px;
-  margin: 14px 0 0;
+  margin: 5px 0 7px;
   font-weight: 400;
   font-size: 14px;
   line-height: 1.2;
@@ -15,10 +15,6 @@
 .popup__input:focus {
   outline: none;
   cursor: text;
-}
-
-.popup__input:last-of-type {
-  margin: 28px 0 0 0;
 }
 
 .popup__input::-webkit-input-placeholder {
@@ -64,8 +60,9 @@
   margin: 0;
 }
 
-@media screen and (max-width: 845px) {
+@media screen and (max-width: 800px) {
   .popup__input {
-    margin: 47px 0 0;
+    margin: 23px 0 0;
+    min-height: 19px;
   }
 }

@@ -2,35 +2,29 @@
   display: flex;
   justify-content: space-between;
   padding: 0 20px;
-  align-items: baseline;
+  align-items: center;
   margin-top: 22px;
+  min-height: 36px;
 }
 
-@media screen and (min-width: 1441px) {
-  .cards__caption {
-    padding: 0 23px;
-    margin-top: 28px;
-  }
-}
-
-@media screen and (max-width: 1441px) {
+@media screen and (max-width: 1440px) {
   .cards__caption {
     padding: 0 calc(20vw / 1280 * 100);
-    margin-top: calc(25vw / 1280 * 100);
+    margin-top: calc(20vw / 1280 * 100);
   }
 }
 
 @media screen and (max-width: 1024px) {
   .cards__caption {
     padding: 0 16px;
-    margin-top: 20px;
+    margin-top: 14px;
   }
 }
 
 @media screen and (max-width: 900px) {
   .cards__caption {
     padding: 0 14px;
-    margin-top: calc(20vw / 900 * 100);
+    margin-top: calc(10% - 11px);
   }
 }
 

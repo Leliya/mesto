@@ -6,4 +6,6 @@
   border: none;
   background-color: #fff;
   position: relative;
+  display: flex;
+  flex-direction: column;
 }
