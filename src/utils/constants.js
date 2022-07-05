@@ -12,11 +12,6 @@ export const activityInput = document.querySelector('.popup__input_type_about');
 
 export const formValidators = {};
 
-export const avatarUnload = {
-  avatar:
-    'https://cdn4.iconfinder.com/data/icons/ui-marketplace-1-0-flat/20/9_customer-256.png',
-};
-
 export const objValid = {
   formElement: '.popup__form',
   inputElement: '.popup__input',

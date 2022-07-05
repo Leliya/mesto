@@ -70,7 +70,7 @@ export default class Card {
   }
 
   deleteCard(id) {
-    document.getByElementId(id).remove();
+    document.getElementById(id).remove();
   }
 
   _setEventListeners() {
